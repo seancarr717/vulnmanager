@@ -55,8 +55,10 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "sqlite3", "~> 1.4"
 end
+#setts up production db postgresl for heroku
 group :production do
-
+  gem 'pg', '~> 1.5', '>= 1.5.4'
+  #gem 'rails_12factor'
 
 
 
