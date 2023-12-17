@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vuln_name: MyString
+  vuln_type: MyString
+  cve: MyString
+  discovered: 2023-12-16
+
+two:
+  vuln_name: MyString
+  vuln_type: MyString
+  cve: MyString
+  discovered: 2023-12-16

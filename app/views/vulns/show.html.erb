@@ -1,0 +1,14 @@
+
+
+<div class="card">
+    <div class="card-body">
+<%= render @vuln %>
+    </div>
+</div>
+
+<div class="btn-group gap-2 col-12 mx-auto">
+  <%= link_to "Edit this vuln", edit_vuln_path(@vuln) , class:"btn btn-outline-primary" %>
+  <%= button_to "Destroy this vuln", @vuln, method: :delete, class:"btn btn-outline-danger" %>
+  <%= link_to "Back to vulns", vulns_path , class:"btn btn-outline-secondary" %>
+  
+</div>

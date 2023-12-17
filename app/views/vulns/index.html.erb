@@ -1,0 +1,41 @@
+
+
+<h1>Vulnerability List</h1>
+<%#sets up table%>
+<table id="vulns"class="table table-bordered">
+
+  <thead>
+    <tr>
+      <th scope="col">Vulnerability Name</th>
+      <th scope="col">Vulnerability Type</th>
+      <th scope="col">Common Vulnerabilities and Exposures</th>
+      <th scope="col">Date Vulnerability was discovered</th>
+      <th scope="col">User Id</th>
+      <th scope="col">Extra Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%#loops through for the amount of vulns but only if the vuln user matches the current user%>
+  <% @vulns.each do |vuln| %>
+    <% if vuln.user== current_user%>
+  <tr>
+        <td><%= vuln.vuln_name %></td>
+        <td><%= vuln.vuln_type %></td>
+        <td><%= vuln.cve %></td>
+        <td><%= vuln.discovered %></td>
+        <td><%= vuln.user_id %></td>
+        <td><%= link_to "Show Vulnerability", vuln,class:'btn btn-primary' %></td>
+  </tr> 
+    <%end%>
+  </tbody>     
+    
+      
+    
+  <% end %>
+</table>
+
+
+
+
+
+<%= link_to "Add a New Vulnerability", new_vuln_path,class:'btn btn-primary' %>

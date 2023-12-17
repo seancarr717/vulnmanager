@@ -1,0 +1,44 @@
+<%= form_with(model: vuln) do |form| %>
+  <% if vuln.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(vuln.errors.count, "error") %> prohibited this vuln from being saved:</h2>
+
+      <ul>
+        <% vuln.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <div class="d-grid gap-2">
+    <%= form.label :Vulnerability_Name, style: "display: block" %>
+    <%= form.text_field :vuln_name,class:"form-control" %>
+  </div>
+
+  <div class="d-grid gap-2">
+    <%= form.label :Vulnerability_Type, style: "display: block" %>
+    <%= form.text_field :vuln_type,class:"form-control" %>
+  </div>
+
+  <div class="d-grid gap-2">
+    <%= form.label :CVE, style: "display: block" %>
+    <%= form.text_field :cve,class:"form-control" %>
+  </div>
+
+  <div class="d-grid gap-2">
+    <%= form.label :discovered, style: "display: center" %>
+    <%= form.date_field :discovered,class:"form-control" %>
+  </div>
+
+  <div class="d-grid gap-2">
+    <%= form.number_field :user_id,id: :vuln_user_id,class:"form-control",value:current_user.id,type: :hidden%>
+  </div>
+  
+
+<br>
+
+  <div class="d-grid gap-2">
+    <%= form.submit class:'btn btn-outline-primary'%>
+  </div>
+<% end %>
